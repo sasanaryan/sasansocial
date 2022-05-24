@@ -18,7 +18,7 @@ app.use(cors());
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 mongoose.connect(
-  "mongodb+srv://sasanaryan:sasan324@cluster0.bz0un.mongodb.net/socialmedia?retryWrites=true&w=majority",
+  process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("Connected to MongoDB");
